@@ -68,16 +68,16 @@ public abstract class Figure {
         return positions;
     }
     
-     protected List <Position> left_right (Position pos, int limit, int left_right)
+     protected List <Position> left_right (Position pos, int limit, int left_right,int forvard_back)
     {   List<Position> positions = new ArrayList();
 
         for (int i= 1; i <= limit; i++)    
         {   
-            if (Position.isLimitY(pos.y + i*left_right))
+            if (Position.isLimitY((char)(pos.y + i*left_right)))
             {
                     positions.add(
                             new Position( 
-                                        pos.x + i*forvard_back * this.color.getValue(),
+                                        (char)(pos.x + i*forvard_back * this.color.getValue()),
                                         pos.y
                                         )
                     );
