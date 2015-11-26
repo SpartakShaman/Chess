@@ -42,7 +42,7 @@ public class Position {
    {
      return ( x > 0 ) && ( x < 9 ); 
    }
-   public static boolean isLimitY(char y)
+   public static boolean isLimitY(int y)
    {
      return ( y > 64 ) && ( y < 73 ); 
    }

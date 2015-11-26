@@ -68,25 +68,22 @@ public abstract class Figure {
         return positions;
     }
     
-     protected List <Position> left_right (Position pos, int limit, int left_right)
-    {   List<Position> positions = new ArrayList();
+    protected List<Position> left_right(Position pos, int limit, int left_right) {
+        List<Position> positions = new ArrayList();
 
-        for (int i= 1; i <= limit; i++)    
-        {   
-            if (Position.isLimitY(pos.y + i*left_right))
-            {
-                    positions.add(
-                            new Position( 
-                                        pos.x + i*forvard_back * this.color.getValue(),
-                                        pos.y
-                                        )
-                    );
-            } else 
-            {
+        for (int i = 1; i <= limit; i++) {
+            if (Position.isLimitY(pos.y + i * left_right)) {
+                positions.add(
+                        new Position(
+                                pos.x,
+                                (char) (pos.y + i * left_right)
+                        )
+                );
+            } else {
                 break;
-            }   
+            }
         }
-   
+
         return positions;
     }
 }

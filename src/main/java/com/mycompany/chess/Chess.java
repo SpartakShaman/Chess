@@ -21,8 +21,16 @@ public class Chess {
         Position pos = new Position(2, 'B');
 //        System.out.println(pos.toString());
 //        System.out.println('C'+0);
+        System.out.println("Peshka");
         Peshka pesh1 = new Peshka(EnumColor.WHITE ,pos);
         for (Position a: pesh1.getAllStaps())
+        {
+            System.out.println(a.toString());
+        }
+        
+        System.out.println("Tura ");
+        Tura tura1 = new Tura(EnumColor.BLACK ,pos);
+         for (Position a: tura1.getAllStaps())
         {
             System.out.println(a.toString());
         }
