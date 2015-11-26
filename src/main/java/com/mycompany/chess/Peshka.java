@@ -25,7 +25,7 @@ public class Peshka extends Figure {
                 limit = 2;
         }
                          
-        all.addAll(super.forvard_back(super.getXy(), limit, Figure.FORVARD));
+        all.addAll(super.forvard_back(super.getXY(), limit, Figure.FORVARD));
         
         return all;
     

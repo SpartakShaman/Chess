@@ -37,7 +37,7 @@ public abstract class Figure {
         this.color = color;
     }
 
-    public Position getXy() {
+    public Position getXY() {
         return xy;
     }
 
@@ -49,13 +49,35 @@ public abstract class Figure {
     protected List <Position> forvard_back (Position pos, int limit, int forvard_back)
     {   List<Position> positions = new ArrayList();
 
-        for (int i= 0; i < limit; i++)    
+        for (int i= 1; i <= limit; i++)    
         {   
-            if (Position.isLimitY((char)(pos.x + forvard_back * this.color.getValue())))
+            if (Position.isLimitX(pos.x + i*forvard_back * this.color.getValue()))
             {
                     positions.add(
                             new Position( 
-                                        (byte)(pos.x + forvard_back * this.color.getValue()),
+                                        pos.x + i*forvard_back * this.color.getValue(),
+                                        pos.y
+                                        )
+                    );
+            } else 
+            {
+                break;
+            }   
+        }
+   
+        return positions;
+    }
+    
+     protected List <Position> left_right (Position pos, int limit, int left_right)
+    {   List<Position> positions = new ArrayList();
+
+        for (int i= 1; i <= limit; i++)    
+        {   
+            if (Position.isLimitY(pos.y + i*left_right))
+            {
+                    positions.add(
+                            new Position( 
+                                        pos.x + i*forvard_back * this.color.getValue(),
                                         pos.y
                                         )
                     );

@@ -10,19 +10,19 @@ package com.mycompany.chess;
  * @author Vlad
  */
 public class Position {
-   byte x;
+   int x;
    char y;
 
-    public Position(byte i, char y) {
-        this.x = i;
+    public Position(int x, char y) {
+        this.x = x;
         this.y = y;
     }
 
-    public byte getX() {
+    public int getX() {
         return x;
     }
 
-    public void setX(byte x) {
+    public void setX(int x) {
         this.x = x;
     }
 
@@ -36,14 +36,14 @@ public class Position {
 
     @Override
     public String toString() {
-        return  (x+"") +(y+"");
+        return  (y+"") +(x+"");
     }
-   public static boolean isLimitX(byte x)
+   public static boolean isLimitX(int x)
    {
      return ( x > 0 ) && ( x < 9 ); 
    }
    public static boolean isLimitY(char y)
    {
-     return ( y > 65 ) && ( y < 72 ); 
+     return ( y > 64 ) && ( y < 73 ); 
    }
 }
