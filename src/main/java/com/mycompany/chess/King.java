@@ -5,6 +5,9 @@
  */
 package com.mycompany.chess;
 
+import com.mycompany.chess.EnumColor;
+import com.mycompany.chess.Figure;
+import com.mycompany.chess.Position;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +15,7 @@ import java.util.List;
  *
  * @author Vlad
  */
-public class Peshka extends Figure {
+public class King extends Figure {
 
     @Override
     public List<Position> getAllStaps() {
@@ -20,19 +23,20 @@ public class Peshka extends Figure {
         List<Position> all = new ArrayList(); 
         
         int limit = 1;
-        if ((super.xy.x == 2 && super.getColor().equals(EnumColor.WHITE)) || (super.xy.x == 7 && super.getColor().equals(EnumColor.BLACK)))
-        {
-                limit = 2;
-        }
-                         
         all.addAll(super.forvard_back(super.getXY(), limit, Figure.FORVARD));
-        all.addAll(super.diagonal(super.getXY(), 1, Figure.FORVARD));
+        all.addAll(super.forvard_back(super.getXY(), limit, Figure.BACK));
+        all.addAll(super.left_right(super.getXY(), limit, Figure.LEFT));
+        all.addAll(super.left_right(super.getXY(), limit, Figure.RIGHT));
+                                
+        all.addAll(super.diagonal(super.getXY(), limit, Figure.FORVARD));
+        all.addAll(super.diagonal(super.getXY(), limit, Figure.BACK));
+       
         
         return all;
     
     }
 
-    public Peshka(EnumColor color, Position xy) {
+    public King(EnumColor color, Position xy) {
         super(color, xy);
         
     }

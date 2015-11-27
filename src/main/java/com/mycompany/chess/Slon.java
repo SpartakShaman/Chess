@@ -12,27 +12,24 @@ import java.util.List;
  *
  * @author Vlad
  */
-public class Peshka extends Figure {
+public class Slon extends Figure {
 
     @Override
     public List<Position> getAllStaps() {
         
         List<Position> all = new ArrayList(); 
         
-        int limit = 1;
-        if ((super.xy.x == 2 && super.getColor().equals(EnumColor.WHITE)) || (super.xy.x == 7 && super.getColor().equals(EnumColor.BLACK)))
-        {
-                limit = 2;
-        }
-                         
-        all.addAll(super.forvard_back(super.getXY(), limit, Figure.FORVARD));
-        all.addAll(super.diagonal(super.getXY(), 1, Figure.FORVARD));
+        int limit = 7;
+                                
+        all.addAll(super.diagonal(super.getXY(), limit, Figure.FORVARD));
+        all.addAll(super.diagonal(super.getXY(), limit, Figure.BACK));
+       
         
         return all;
     
     }
 
-    public Peshka(EnumColor color, Position xy) {
+    public Slon(EnumColor color, Position xy) {
         super(color, xy);
         
     }

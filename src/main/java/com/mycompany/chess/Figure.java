@@ -86,4 +86,50 @@ public abstract class Figure {
 
         return positions;
     }
+    
+      protected List <Position> diagonal (Position pos, int limit, int forvard_back)
+    {   List<Position> positions = new ArrayList();
+
+        for (int i= 1; i <= limit; i++)    
+        {   
+            if (Position.isLimitX(pos.x + i*forvard_back * this.color.getValue()) && Position.isLimitY(pos.y + i*forvard_back))
+            {
+                    positions.add(
+                            new Position( 
+                                        pos.x + i*forvard_back * this.color.getValue(),
+                                        (char)(pos.y + i*forvard_back)
+                                        )
+                    );
+            } 
+            if (Position.isLimitX(pos.x + i*forvard_back * this.color.getValue()) && Position.isLimitY(pos.y - i*forvard_back))
+            {
+                    positions.add(
+                            new Position( 
+                                        pos.x + i*forvard_back * this.color.getValue(),
+                                        (char)(pos.y - i*forvard_back)
+                                        )
+                    );
+            } 
+        }
+   
+        return positions;
+    }
+      
+       protected List<Position> kon(Position pos) {
+        List<Position> positions = new ArrayList();
+ 
+        for (int i = 1; i <= 8; i++) {
+            case i:
+            1:
+            2:
+            3:
+            
+            if (Position.isLimitX(pos.x) && Position.isLimitY(pos.y))
+            {
+                positions.add(new Position(pos.x,pos.y));               
+            } 
+        }
+
+        return positions;
+    }
 }
