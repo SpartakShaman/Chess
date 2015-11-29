@@ -115,18 +115,21 @@ public abstract class Figure {
         return positions;
     }
       
-       protected List<Position> kon(Position pos) {
+       protected List<Position> horse(Position pos) {
         List<Position> positions = new ArrayList();
- 
-        for (int i = 1; i <= 8; i++) {
-            case i:
-            1:
-            2:
-            3:
-            
-            if (Position.isLimitX(pos.x) && Position.isLimitY(pos.y))
+       int xx, yy;
+       for (int i = 0; i <= 7; i++) 
+        {
+           xx = (int)Math.round(2*Math.cos(Math.toRadians(30+i*45)));
+           yy = (int)Math.round(2*Math.sin(Math.toRadians(30+i*45))); 
+                  
+            if (Position.isLimitX(pos.x+xx) && Position.isLimitY(pos.y+yy))
             {
-                positions.add(new Position(pos.x,pos.y));               
+                positions.add(new Position(
+                                           pos.x + xx,
+                                          (char)(pos.y + yy)
+                                           )   
+                            );
             } 
         }
 

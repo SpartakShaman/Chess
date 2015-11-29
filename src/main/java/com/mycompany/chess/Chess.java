@@ -16,7 +16,7 @@ public class Chess {
      */
     public static void main(String[] args) {
 
-        Position pos = new Position(1, 'A');
+        Position pos = new Position(3, 'C');
         System.out.println("Координаты = " + pos.toString());
         
 //        System.out.println("Peshka");
@@ -47,9 +47,16 @@ public class Chess {
 //            System.out.println(a.toString());
 //        }
          
-                 System.out.println("King ");
-        King king1 = new King(EnumColor.BLACK ,pos);
-         for (Position a: king1.getAllStaps())
+//                 System.out.println("King ");
+//        King king1 = new King(EnumColor.BLACK ,pos);
+//         for (Position a: king1.getAllStaps())
+//        {
+//            System.out.println(a.toString());
+//        }
+         
+        System.out.println("Horse ");
+        Horse horse1 = new Horse(EnumColor.WHITE ,pos);
+         for (Position a: horse1.getAllStaps())
         {
             System.out.println(a.toString());
         }
