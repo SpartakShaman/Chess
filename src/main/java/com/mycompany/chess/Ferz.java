@@ -23,7 +23,7 @@ public class Ferz extends Figure {
         List<Position> all = new ArrayList(); 
         
         int limit = 7;
-        all.addAll(super.forvard_back(super.getXY(), limit, Figure.FORVARD));
+          all.addAll(super.forvard_back(super.getXY(), limit, Figure.FORVARD));
         all.addAll(super.forvard_back(super.getXY(), limit, Figure.BACK));
         all.addAll(super.left_right(super.getXY(), limit, Figure.LEFT));
         all.addAll(super.left_right(super.getXY(), limit, Figure.RIGHT));

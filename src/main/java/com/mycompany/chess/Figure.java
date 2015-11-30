@@ -115,22 +115,24 @@ public abstract class Figure {
         return positions;
     }
       
-       protected List<Position> horse(Position pos) {
+      protected List<Position> horse(Position pos) {
         List<Position> positions = new ArrayList();
-       int xx, yy;
-       for (int i = 0; i <= 7; i++) 
-        {
-           xx = (int)Math.round(2*Math.cos(Math.toRadians(30+i*45)));
-           yy = (int)Math.round(2*Math.sin(Math.toRadians(30+i*45))); 
-                  
-            if (Position.isLimitX(pos.x+xx) && Position.isLimitY(pos.y+yy))
-            {
+        // У коня 8 возможных позиций хода, размещенных по кругу вокруг него. Используя sin  и cos
+        // вычисляем в завиcимости от угла смещение координат по осям x и y с основанием
+        // в центарльной точке, где находится фигура. Стартовый угол 30 градусов,шаг угла - 45 град.
+        // Радиус круга принимаем равным 2, округлением приводим вычисляемые коордтнаты к целым (клеткам доски).
+        int xx, yy;
+        for (int i = 0; i <= 7; i++) {
+            xx = (int) Math.round(2 * Math.cos(Math.toRadians(30 + i * 45)));
+            yy = (int) Math.round(2 * Math.sin(Math.toRadians(30 + i * 45)));
+        // Проверяем вычисленные координаты хода на попадание в поле шахматной доски.
+            if (Position.isLimitX(pos.x + xx) && Position.isLimitY(pos.y + yy)) {
                 positions.add(new Position(
-                                           pos.x + xx,
-                                          (char)(pos.y + yy)
-                                           )   
-                            );
-            } 
+                        pos.x + xx,
+                        (char) (pos.y + yy)
+                )
+                );
+            }
         }
 
         return positions;

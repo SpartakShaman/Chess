@@ -55,9 +55,8 @@ public class Chess {
 //        }
          
         System.out.println("Horse ");
-        Horse horse1 = new Horse(EnumColor.WHITE ,pos);
-         for (Position a: horse1.getAllStaps())
-        {
+        Horse horse1 = new Horse(EnumColor.WHITE, pos);
+        for (Position a : horse1.getAllStaps()) {
             System.out.println(a.toString());
         }
     }
