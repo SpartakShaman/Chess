@@ -13,14 +13,19 @@ import java.util.List;
  * @author Vlad
  */
 public class Tura extends Figure {
+    
+    private int limit = 7;
 
+    public int getLimit() {
+        return limit;
+    }
+    
     @Override
     public List<Position> getAllStaps() {
         
         List<Position> all = new ArrayList(); 
         
-        int limit = 7;
-                                
+                               
         all.addAll(super.forvard_back(super.getXY(), limit, Figure.FORVARD));
         all.addAll(super.forvard_back(super.getXY(), limit, Figure.BACK));
         all.addAll(super.left_right(super.getXY(), limit, Figure.LEFT));
