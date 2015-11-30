@@ -21,15 +21,15 @@ public class Tura extends Figure {
     }
     
     @Override
-    public List<Position> getAllStaps() {
+    public List<Position> getAllSteps() {
         
         List<Position> all = new ArrayList(); 
         
                                
-        all.addAll(super.forvard_back(super.getXY(), limit, Figure.FORVARD));
-        all.addAll(super.forvard_back(super.getXY(), limit, Figure.BACK));
-        all.addAll(super.left_right(super.getXY(), limit, Figure.LEFT));
-        all.addAll(super.left_right(super.getXY(), limit, Figure.RIGHT));
+        all.addAll(super.forvard_back(limit, Figure.FORVARD));
+        all.addAll(super.forvard_back(limit, Figure.BACK));
+        all.addAll(super.left_right(limit, Figure.LEFT));
+        all.addAll(super.left_right(limit, Figure.RIGHT));
         
         return all;
     

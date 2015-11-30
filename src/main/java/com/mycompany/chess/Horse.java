@@ -15,11 +15,11 @@ import java.util.List;
 public class Horse extends Figure {
 
     @Override
-    public List<Position> getAllStaps() {
+    public List<Position> getAllSteps() {
         
         List<Position> all = new ArrayList();         
                              
-        all.addAll(super.horse(super.getXY()));
+        all.addAll(super.horse());
                
         return all;    
     }

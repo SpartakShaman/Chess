@@ -14,15 +14,21 @@ import java.util.List;
  */
 public class Slon extends Figure {
 
+    private int limit = 7;
+
+    public int getLimit() {
+        return limit;
+    }
+    
     @Override
-    public List<Position> getAllStaps() {
+    public List<Position> getAllSteps() {
         
-        List<Position> all = new ArrayList(); 
-        
-        int limit = 7;
-                                
-        all.addAll(super.diagonal(super.getXY(), limit, Figure.FORVARD));
-        all.addAll(super.diagonal(super.getXY(), limit, Figure.BACK));
+        List<Position> all = new ArrayList();         
+                                        
+        all.addAll(super.diagonal(limit, Figure.FORVARD, Figure.RIGHT));
+        all.addAll(super.diagonal(limit, Figure.FORVARD, Figure.LEFT));
+        all.addAll(super.diagonal(limit, Figure.BACK, Figure.RIGHT));
+        all.addAll(super.diagonal(limit, Figure.BACK, Figure.LEFT));
        
         
         return all;

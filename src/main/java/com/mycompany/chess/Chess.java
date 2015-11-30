@@ -19,44 +19,44 @@ public class Chess {
         Position pos = new Position(3, 'C');
         System.out.println("Координаты = " + pos.toString());
         
-//        System.out.println("Peshka");
-//        Peshka pesh1 = new Peshka(EnumColor.WHITE ,pos);
-//        for (Position a: pesh1.getAllStaps())
-//        {
-//            System.out.println(a.toString());
-//        }
+        System.out.println("Peshka");
+        Peshka pesh1 = new Peshka(EnumColor.WHITE ,pos);
+        for (Position a: pesh1.getAllSteps())
+        {
+            System.out.println(a.toString());
+        }
         
-//        System.out.println("Tura ");
-//        Tura tura1 = new Tura(EnumColor.BLACK ,pos);
-//         for (Position a: tura1.getAllStaps())
-//        {
-//            System.out.println(a.toString());
-//        }
+        System.out.println("Tura ");
+        Tura tura1 = new Tura(EnumColor.BLACK ,pos);
+         for (Position a: tura1.getAllSteps())
+        {
+            System.out.println(a.toString());
+        }
          
-//        System.out.println("Slon ");
-//        Slon slon1 = new Slon(EnumColor.BLACK ,pos);
-//         for (Position a: slon1.getAllStaps())
-//        {
-//            System.out.println(a.toString());
-//        }
+        System.out.println("Slon ");
+        Slon slon1 = new Slon(EnumColor.BLACK ,pos);
+         for (Position a: slon1.getAllSteps())
+        {
+            System.out.println(a.toString());
+        }
          
-//        System.out.println("Ferz ");
-//        Ferz ferz1 = new Ferz(EnumColor.BLACK ,pos);
-//         for (Position a: ferz1.getAllStaps())
-//        {
-//            System.out.println(a.toString());
-//        }
+        System.out.println("Ferz ");
+        Ferz ferz1 = new Ferz(EnumColor.BLACK ,pos);
+         for (Position a: ferz1.getAllSteps())
+        {
+            System.out.println(a.toString());
+        }
          
-//                 System.out.println("King ");
-//        King king1 = new King(EnumColor.BLACK ,pos);
-//         for (Position a: king1.getAllStaps())
-//        {
-//            System.out.println(a.toString());
-//        }
+                 System.out.println("King ");
+        King king1 = new King(EnumColor.BLACK ,pos);
+         for (Position a: king1.getAllSteps())
+        {
+            System.out.println(a.toString());
+        }
          
         System.out.println("Horse ");
         Horse horse1 = new Horse(EnumColor.WHITE, pos);
-        for (Position a : horse1.getAllStaps()) {
+        for (Position a : horse1.getAllSteps()) {
             System.out.println(a.toString());
         }
     }
