@@ -16,7 +16,7 @@ public class Chess {
      */
     public static void main(String[] args) {
 
-        Position pos = new Position(3, 'C');
+          Position pos = new Position(3, 'C');
         System.out.println("Координаты = " + pos.toString());
         
         System.out.println("Peshka");
